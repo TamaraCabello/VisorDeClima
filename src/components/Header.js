@@ -29,7 +29,7 @@ const Header = ({ clima, setCity, getClima, city }) => {
                     </div>
                 </div>
                 <div className='datetime-container'>
-                    <p style={{ fontSize: 30, margin: 0, margin: '20px 20px 20px 20px' }}>
+                    <p style={{ fontSize: 30, margin: '20px 20px 20px 20px' }}>
                         {(clima === undefined) ? moment().format('dddd DD, MMMM, yyyy HH:mm') : moment.unix(clima.dt).utc().format('dddd DD, MMMM, yyyy hh:mm')}
                     </p>
                 </div>
