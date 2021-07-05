@@ -2,6 +2,7 @@ import './App.css';
 import { apiKey, lang, units } from "./api";
 import { useState } from 'react';
 import moment from 'moment';
+import 'moment/locale/es';
 
 //Images
 import sunrise from "../src/assets/images/sunrise.png";
