@@ -1,38 +1,117 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #D3F0F1;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.header {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  margin-bottom: 50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.search-bar-container{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.boton {
+  background-color: #D3F0F1;
+  border-radius: 15px;
+  width: 100px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.boton:hover{
+  background-color: #bad2d3;
+  cursor:pointer;
+}
+
+.search-bar {
+  height: 15px;
+  width: 250px;
+  background-image: url('/src/assets/images/searchicon.png');
+  background-position: 10px 7px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 10px 0px 10px 45px;
+  border: 2px solid #D9D9D9;
+  border-radius: 5px;
+  margin: 20px 20px 20px 50px;
+}
+
+.datetime-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0px 50px 0px 0px;
+  min-width: max-content;
+}
+
+.main-container {
+  display: flex;
+  flex: content;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 30px 50px 30px 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-card {
+  flex: 0.3;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.extra-section {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-card {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+}
+
+.divider {
+  border-left: 1px solid #C2C2C2;
+  height: 55px;
+  margin: 0px 10px 0px 10px;
+}
+
+/* Texto */
+
+.h1 {
+  font-size: 50px;
+  font-weight: 300;
+  margin: 0px 0px 0px 0px;
+  min-width: max-content;
+}
+
+.h2{
+  font-size: 50px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.t1{
+  font-size: 22px;
+  font-weight:lighter;
+  margin: 0px;
+  min-width: max-content;
 }
