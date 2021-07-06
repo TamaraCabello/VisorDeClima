@@ -8,7 +8,7 @@ const InformativeCard = ({ title, description, image }) => {
                 <p style={{ fontSize: 35, textAlign: 'center', margin: 0 }}>
                     {title}
                 </p>
-                <p style={{ fontSize: 20, textAlign: 'center', }}>
+                <p style={{ fontSize: 20, textAlign: 'center' }}>
                     {description}
                 </p>
                 <img

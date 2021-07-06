@@ -9,8 +9,8 @@
 .informative-card {
     background-color: white;
     border-radius: 10px;
-    width: 1000px;
-    padding: 15px;
+    width: fit-content;
+    padding: 30px;
     margin: 30px auto 30px auto;
     justify-content: center;
 }

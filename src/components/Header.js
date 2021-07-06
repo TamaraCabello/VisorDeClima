@@ -23,14 +23,15 @@ const Header = ({ clima, setCity, getClima, city }) => {
                         placeholder='Ingrese una ciudad'
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
+                        onKeyPress={(e) => (e.key === 'Enter') ? getClima() : null}
                     />
-                    <div className='boton' onClick={() => { getClima() }} >
-                        <p style={{ fontSize: 18, fontWeight: 400, margin: 5 }}>Buscar</p>
-                    </div>
+                    <button className='boton' onClick={() => getClima()}>
+                        Buscar
+                    </button>
                 </div>
                 <div className='datetime-container'>
                     <p style={{ fontSize: 30, margin: '20px 20px 20px 20px' }}>
-                        {(clima === undefined) ? moment().format('dddd DD, MMMM, yyyy HH:mm') : moment.unix(clima.dt).utc().format('dddd DD, MMMM, yyyy hh:mm')}
+                        {(clima === undefined) ? moment().format('dddd DD, MMMM, yyyy HH:mm') : moment.unix(clima.dt).utc(false).format('dddd DD, MMMM, yyyy HH:mm')}
                     </p>
                 </div>
             </div>

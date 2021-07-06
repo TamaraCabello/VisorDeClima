@@ -11,6 +11,7 @@ import temperature from "../src/assets/images/temperature.png";
 import water from "../src/assets/images/water.png";
 import planet from "../src/assets/images/planet.png";
 import errorImg from "../src/assets/images/error.png";
+import pointer from "../src/assets/images/pointer.png";
 
 //Components
 import Card from "./components/Card";
@@ -42,36 +43,38 @@ function App() {
 
       {
         clima && clima.cod === 200 ?
-
-          <div>
+          <>
             <Header clima={clima} setCity={setCity} getClima={getClima} city={city} />
 
             <div className='main-container'>
 
               <div className='main-card col' >
-                <div className='row' style={{ flex: 1, }} >
-                  <p className='h2'>{clima.name}</p>
+                <div className='row'>
+                  <p className='h2'>
+                    {clima.name}
+                    <img
+                      id='pointer'
+                      style={{ margin: '5px 5px 3px 5px' }}
+                      onClick={() => { window.open(`https://www.google.com.ar/maps/place/${clima.coord.lat}+${clima.coord.lon}`) }}
+                      src={pointer}
+                      alt="pointerMap"
+                      height="30px"
+                      width="30px"
+                    />
+                  </p>
                 </div>
-                <div className='row' style={{ flex: 1, margin: '25px 0px 25px 0px' }} >
-                  <div className='col' style={{ flex: 0.5, justifyContent: 'center', }} >
-                    <p className='h1' style={{ alignSelf: 'center', }} >{clima.main.temp} °C</p>
-                  </div>
-                  <div className='col' style={{ flex: 0.01, justifyContent: 'center', }} >
-                    <div className='divider' />
-                  </div>
-                  <div className='col' style={{ flex: 0.49, justifyContent: 'center' }} >
-                    <div className='col'>
-                      <img
-                        style={{ alignSelf: 'center' }}
-                        src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
-                        alt="Weather Icon"
-                        height="130px"
-                        width="130px"
-                      />
-                    </div>
-                    <div className='col' style={{ textAlign: 'center' }}>
-                      <p className='t1'>{capitalizeSentence(clima.weather[0].description)}</p>
-                    </div>
+                <div className='row' style={{ flex: 1, margin: '25px 0px 25px 0px', justifyContent: 'center' }} >
+                  <p className='h1' style={{ alignSelf: 'center', }} >{clima.main.temp} °C</p>
+                  <div className='divider' />
+                  <div className='col' style={{ flex: 0.49, justifyContent: 'center', }} >
+                    <img
+                      style={{ alignSelf: 'center' }}
+                      src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
+                      alt="Weather Icon"
+                      height="130px"
+                      width="130px"
+                    />
+                    <p className='t1' style={{ textAlign: 'center' }}>{capitalizeSentence(clima.weather[0].description)}</p>
                   </div>
                 </div>
                 <div className='row'>
@@ -84,9 +87,9 @@ function App() {
                   <Card
                     image={sunrise}
                     txt1='Amanecer'
-                    value1={moment.unix(clima.sys.sunrise).utc().format('hh:mm')}
+                    value1={moment.unix(clima.sys.sunrise).utc(false).format('HH:mm')}
                     txt2='Anochecer'
-                    value2={moment.unix(clima.sys.sunset).utc().format('hh:mm')}
+                    value2={moment.unix(clima.sys.sunset).utc(false).format('HH:mm')}
                   />
                   <Card
                     image={wind}
@@ -97,7 +100,7 @@ function App() {
                   />
                 </div>
 
-                <div className='extra-card row' style={{ flex: 0.6, justifyContent: 'center' }}>
+                <div className='extra-card'>
                   <div className='row' style={{ flex: 1, justifyContent: 'center' }}>
                     <div className='col' style={{ flex: 0.3, justifyContent: 'center', margin: '0px 10px 0px 0px' }} >
                       <img
@@ -108,14 +111,12 @@ function App() {
                         style={{ alignSelf: 'center' }}
                       />
                     </div>
-                    <div className='col' style={{ flex: 0.7, }}>
+                    <div className='col' style={{ flex: 0.7, margin: 10 }}>
                       <p className='t1' style={{ margin: '0px 0px 10px 0px' }}>Temperatura máxima<br />{clima.main.temp_max} °C</p>
                       <p className='t1'>Temperatura mínima<br />{clima.main.temp_min} °C</p>
                     </div>
                   </div>
-                  <div className='col' style={{ flex: 0.01, justifyContent: 'center', }} >
-                    <div className='divider' />
-                  </div>
+                  <div className='divider' />
                   <div className='row' style={{ flex: 1, justifyContent: 'center' }}>
                     <div className='col' style={{ flex: 0.3, justifyContent: 'center', margin: '0px 10px 0px 0px' }} >
                       <img
@@ -126,7 +127,7 @@ function App() {
                         style={{ alignSelf: 'center' }}
                       />
                     </div>
-                    <div className='col' style={{ flex: 0.7, }}>
+                    <div className='col' style={{ flex: 0.7, margin: 10 }}>
                       <p className='t1' style={{ margin: '0px 0px 10px 0px' }}>Presión atmosférica<br />{clima.main.pressure} hPa</p>
                       <p className='t1'>Humedad<br />{clima.main.humidity} %</p>
                     </div>
@@ -135,7 +136,7 @@ function App() {
 
               </div>
             </div >
-          </div>
+          </>
 
           : clima && clima.cod !== 200 ?
             <div>

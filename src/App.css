@@ -1,6 +1,7 @@
 .App {
   background-color: #D3F0F1;
   min-height: 100vh;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
 }
@@ -17,22 +18,25 @@
 .search-bar-container{
   flex: 1;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .boton {
   background-color: #D3F0F1;
-  border-radius: 15px;
+  border-color: #9ececf;
+  border-style: solid;
+  border-radius: 10px;
   width: 100px;
+  height: 30px;
   text-align: center;
-  margin-bottom: 22px;
+  color: #1d7475;
+  font-weight: bold;
 }
 
 .boton:hover{
   background-color: #bad2d3;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .search-bar {
@@ -48,22 +52,26 @@
   margin: 20px 20px 20px 50px;
 }
 
+.search-bar:focus {
+  border: 2px solid #9bbcbd;
+  outline: none;
+}
+
 .datetime-container {
   flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-end;
   margin: 0px 50px 0px 0px;
   min-width: max-content;
 }
 
 .main-container {
   display: flex;
-  flex: content;
   flex-direction: row;
   justify-content: center;
-  padding: 30px 50px 30px 50px;
+  align-content: flex-start;
+  padding: 0px 50px 30px 50px;
 }
 
 .main-card {
@@ -72,16 +80,19 @@
   border-radius: 10px;
   padding: 15px;
   margin: 10px;
+  max-width: fit-content;
 }
 
 .extra-section {
   flex: 0.6;
   display: flex;
   flex-direction: column;
+  max-width: fit-content;
 }
 
 .extra-card {
   display: flex;
+  flex: 0.6;
   background-color: white;
   border-radius: 10px;
   padding: 15px;
@@ -91,7 +102,12 @@
 .divider {
   border-left: 1px solid #C2C2C2;
   height: 55px;
-  margin: 0px 10px 0px 10px;
+  margin: 0px 15px 0px 15px;
+  align-self: center;
+}
+
+#pointer:hover{
+  cursor: pointer;
 }
 
 /* Texto */
