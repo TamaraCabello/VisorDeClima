@@ -27,7 +27,7 @@ function App() {
   const capitalizeSentence = (string) => { string = string[0].toUpperCase() + string.substring(1); return string }
 
   const getClima = async () => {
-    return await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}&lang=${lang}`)
+    return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}&lang=${lang}`)
       .then((response) => response.json())
       .then((json) => {
         setClima(json);
