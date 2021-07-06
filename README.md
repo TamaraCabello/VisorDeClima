@@ -1,6 +1,6 @@
 # Visor de clima
 
-### Información:
+### Información
 Aplicación web utilizada para consultar el pronóstico del tiempo de cualquier parte del mundo indicando una ciudad.
 
 **Al consultar por una ciudad:**
