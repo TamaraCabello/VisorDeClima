@@ -9,3 +9,10 @@ Aplicación web utilizada para consultar el pronóstico del tiempo de cualquier 
 - Es posible acceder a la ubicación geográfica. 
 
 #### API utilizada (opción gratuita): https://openweathermap.org/current
+
+---
+
+### Instrucciones
+1. Ejecutar ``npm install`` o ``yarn install`` para instalar todas las dependencias del proyecto.
+2. Ejecutar ``npm start``.
+
