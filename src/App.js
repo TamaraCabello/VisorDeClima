@@ -69,7 +69,7 @@ function App() {
                   <div className='col' style={{ flex: 0.49, justifyContent: 'center', }} >
                     <img
                       style={{ alignSelf: 'center' }}
-                      src={`http://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
+                      src={`https://openweathermap.org/img/wn/${clima.weather[0].icon}@2x.png`}
                       alt="Weather Icon"
                       height="130px"
                       width="130px"
